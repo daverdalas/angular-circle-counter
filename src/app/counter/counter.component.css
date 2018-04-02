@@ -1,0 +1,41 @@
+.ng-counter {
+    display: inline-block;
+    position: relative;
+    font-size: 150px;
+}
+
+.ng-counter.ng-counter--with-circle {
+    width: 1em;
+    height: 1em;
+}
+
+.ng-counter.ng-counter--with-circle .ng-counter__text {
+    align-items: center;
+    justify-content: center;
+    height: 1em;
+}
+
+.ng-counter__text {
+    display: flex;
+}
+
+.ng-counter__number, .ng-counter__prefix, .ng-counter__suffix {
+    font-size: 0.3em;
+}
+
+.ng-counter__circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1em;
+}
+
+.ng-counter__circle__bar, .ng-counter__circle__fill {
+    position: absolute;
+    border: 0.08em solid;
+    width: 0.84em;
+    height: 0.84em;
+    clip: rect(0em, 0.5em, 1em, 0em);
+    border-radius: 50%;
+}
