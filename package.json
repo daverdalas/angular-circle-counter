@@ -1,6 +1,6 @@
 {
   "name": "angular-circle-counter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Piotr Suchanek <hunterdaver@gmail.com> (http://daver.net.pl/)",
   "license": "MIT",
   "repository": {
@@ -17,8 +17,10 @@
     "packagr": "ng-packagr -p ng-package.json"
   },
   "private": false,
+  "dependencies": {
+    "ease-component": "^1.0.0"
+  },
   "peerDependencies": {
-    "ease-component": "^1.0.0",
     "@angular/core": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
