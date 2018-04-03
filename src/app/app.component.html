@@ -1,25 +1,275 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-    <app-counter [from]=0 [to]=50 [of]="100" [fontSize]="300" [delay]="5000" (finished)="finished()">
-        <ng-counter-suffix>%</ng-counter-suffix>
-    </app-counter>
-</div>
-<div>
-    <app-counter #manual [from]=0 [to]=75 [of]="100" [mode]="'manual'">
-        <ng-counter-suffix>%</ng-counter-suffix>
-    </app-counter>
-    <button (click)="counterComponent.start()">Start</button>
-    <button (click)="counterComponent.stop()">Stop</button>
-    <button (click)="counterComponent.restart()">Restart</button>
-</div>
-<div>
-    <app-counter [from]=0 [to]=50 [of]="100" [showCircle]="false">
-        <ng-counter-suffix>$</ng-counter-suffix>
-    </app-counter>
-</div>
-<div style="height: 1000px">
-</div>
-<app-counter [from]=0 [to]=50 [of]="100" [mode]="'viewport'">
-    <ng-counter-suffix>%</ng-counter-suffix>
-</app-counter>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-10 offset-xl-1">
+            <div class="text-center">
+                <h1 class="display-3 mt-5">Angular Circle Counter</h1>
+                <p class="lead">
+                    Simple counter component for your angular project
+                </p>
+                <a href="https://github.com/daverdalas/angular-circle-counter" target="_blank" class="btn btn-primary">
+                    Github
+                </a>
+                <div class="mt-5">
+                    <app-counter [from]=0 [to]=100 [of]="100" [fontSize]="300">
+                        <ng-counter-suffix>
+                            <span>%</span>
+                            <span style="display: block; width: 100%; font-size: 0.4em; position: absolute; left: 0; text-align: center; top: 5em;">
+                        satisfaction
+                    </span>
+                        </ng-counter-suffix>
+                    </app-counter>
+                </div>
+            </div>
+            <div class="mt-5">
+                <h2>Installation</h2>
+                <pre><code class="js">npm install angular-circle-counter --save
+or
+yarn add angular-circle-counter
 
+Next:
+Import CounterModule inside app.module.ts
+
+import {{'{'}}CounterModule{{'}'}} from 'angular-circle-counter';
+then add it to imports list:
+imports: [
+    CounterModule
+],
+
+If you want to use counter text prefix or suffix
+remember about adding CUSTOM_ELEMENTS_SCHEMA to module schemas:
+import {{'{'}}CUSTOM_ELEMENTS_SCHEMA{{'}'}} from '@angular/core';
+
+schemas: [CUSTOM_ELEMENTS_SCHEMA],
+</code></pre>
+            </div>
+            <div class="mt-5">
+                <h2>Usage</h2>
+                <pre><code class="html">&lt;app-counter [from]=0 [to]=100 [of]=100&gt;&lt;/app-counter&gt;
+                </code></pre>
+            </div>
+
+            <div class="mt-5">
+                <h2>Options</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <th scope="col">Parameter</th>
+                        <th scope="col" style="min-width: 85px;">Type</th>
+                        <th scope="col">Options</th>
+                        <th scope="col">Default</th>
+                        <th scope="col">Description</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">from</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>0</td>
+                            <td>Starting number</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">to</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>0</td>
+                            <td>Finish number</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">of</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>Same as <strong>to</strong></td>
+                            <td>E.g. 50 out of 100 - useful for displaying percentages</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">mode</th>
+                            <td><code>string</code></td>
+                            <td>onInit | viewport | manual</td>
+                            <td>onInit</td>
+                            <td>Decides when to start counting</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">animationTime</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>4000</td>
+                            <td>Time at which the counter is to take place</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">animationType</th>
+                            <td><code>string</code></td>
+                            <td>See available names <a href="https://github.com/component/ease#ease" target="_blank">here</a>
+                            </td>
+                            <td>linear</td>
+                            <td>Animation type</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">showCircle</th>
+                            <td><code>boolean</code></td>
+                            <td>true/false</td>
+                            <td>true</td>
+                            <td>Determines the display of the circle</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">circleColor</th>
+                            <td><code>string</code></td>
+                            <td>-</td>
+                            <td>#307bbb</td>
+                            <td>Determines the color of the circle</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">fontSize</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>150</td>
+                            <td>Manipulates the size of the counter</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">delay</th>
+                            <td><code>number</code></td>
+                            <td>-</td>
+                            <td>0</td>
+                            <td>Delay with which the countdown is to start</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">(finished)</th>
+                            <td><code>event</code></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Event sent at end of countdown</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                &lt;ng-counter-suffix&gt;&lt;/ng-counter-suffix&gt;
+                                <br/>
+                                &lt;ng-counter-prefix&gt;&lt;/ng-counter-prefix&gt;
+                            </th>
+                            <td><code>html</code></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Add html code before or after counter number</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h2>Test it!</h2>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <label>from</label>
+                            <input type="number" name="from" [(ngModel)]="from" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>to</label>
+                            <input type="number" name="to" [(ngModel)]="to" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>of</label>
+                            <input type="number" name="of" [(ngModel)]="of" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>Mode</label>
+                            <select name="mode" [(ngModel)]="mode" class="form-control">
+                                <option value="manual">Manual</option>
+                                <option value="onInit">OnInit</option>
+                                <option value="viewport">Viewport</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>animationTime</label>
+                            <input type="number" name="animationTime" [(ngModel)]="animationTime" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <label>animationType</label>
+                            <select name="animationType" [(ngModel)]="animationType" class="form-control">
+                                <option value="linear">linear</option>
+                                <option value="inQuad">inQuad</option>
+                                <option value="outQuad">outQuad</option>
+                                <option value="inOutQuad">inOutQuad</option>
+                                <option value="inCube">inCube</option>
+                                <option value="outCube">outCube</option>
+                                <option value="inOutCube">inOutCube</option>
+                                <option value="inQuart">inQuart</option>
+                                <option value="outQuart">outQuart</option>
+                                <option value="inOutQuart">inOutQuart</option>
+                                <option value="inQuint">inQuint</option>
+                                <option value="outQuint">outQuint</option>
+                                <option value="inOutQuint">inOutQuint</option>
+                                <option value="inSine">inSine</option>
+                                <option value="outSine">outSine</option>
+                                <option value="inOutSine">inOutSine</option>
+                                <option value="inExpo">inExpo</option>
+                                <option value="outExpo">outExpo</option>
+                                <option value="inOutExpo">inOutExpo</option>
+                                <option value="inCirc">inCirc</option>
+                                <option value="outCirc">outCirc</option>
+                                <option value="inOutCirc">inOutCirc</option>
+                                <option value="inBack">inBack</option>
+                                <option value="outBack">outBack</option>
+                                <option value="inOutBack">inOutBack</option>
+                                <option value="inBounce">inBounce</option>
+                                <option value="outBounce">outBounce</option>
+                                <option value="inOutBounce">inOutBounce</option>
+                                <option value="inElastic">inElastic</option>
+                                <option value="outElastic">outElastic</option>
+                                <option value="inOutElastic">inOutElastic</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label>showCircle</label>
+                            <input type="checkbox" name="showCircle" [(ngModel)]="showCircle" class="form-control"/>
+                        </div>
+                        <div class="col">
+                            <label>circleColor</label>
+                            <input type="text" name="circleColor" [(ngModel)]="circleColor" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>fontSize</label>
+                            <input type="text" name="fontSize" [(ngModel)]="fontSize" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>delay</label>
+                            <input type="text" name="delay" [(ngModel)]="delay" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-3">
+                        <div class="col">
+                            <label>&lt;ng-counter-suffix&gt;</label>
+                            <input type="text" name="suffix" [(ngModel)]="suffix" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label>&lt;ng-counter-prefix&gt;</label>
+                            <input type="text" name="prefix" [(ngModel)]="prefix" class="form-control">
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-primary" (click)="counterComponent.start()">Start</button>
+                <button class="btn btn-danger" (click)="counterComponent.stop()">Stop</button>
+                <button class="btn btn-warning" (click)="counterComponent.restart()">Restart</button>
+                <div class="text-center mb-5 mt-3">
+                    <app-counter #manual
+                                 [from]=from
+                                 [to]=to
+                                 [of]=of
+                                 [mode]=mode
+                                 [animationTime]=animationTime
+                                 [animationType]=animationType
+                                 [showCircle]=showCircle
+                                 [circleColor]=circleColor
+                                 [fontSize]=fontSize
+                                 [delay]=delay
+
+                    >
+                        <ng-counter-suffix [innerHtml]="suffix"></ng-counter-suffix>
+                        <ng-counter-prefix [innerHtml]="prefix"></ng-counter-prefix>
+                    </app-counter>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

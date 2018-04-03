@@ -11,8 +11,7 @@ export class CounterComponent implements OnInit {
     @Input() from: number = 0;
     @Input() to: number = 0;
     @Input() of: number;
-    @Input() startOnInit: boolean = true;
-    @Input() animationTime: number = 5000;
+    @Input() animationTime: number = 4000;
     @Input() animationType: string = 'linear';
     @Input() showCircle: boolean = true;
     @Input() circleColor: string = '#307bbb';

@@ -1,1 +1,1 @@
-soon
+See info here: https://daverdalas.github.io/angular-circle-counter/

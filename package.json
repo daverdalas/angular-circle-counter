@@ -1,6 +1,7 @@
 {
   "name": "angular-circle-counter",
-  "version": "1.0.2",
+  "description": "Simple counter component for your angular project",
+  "version": "1.0.3",
   "author": "Piotr Suchanek <hunterdaver@gmail.com> (http://daver.net.pl/)",
   "license": "MIT",
   "repository": {
