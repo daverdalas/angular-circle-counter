@@ -2,9 +2,13 @@
   "name": "angular-circle-counter",
   "description": "Simple counter component for your angular project",
   "keywords": [
-    "angular", "angular-counter", "angular2", "angular2+", "angular-circle-counter"
+    "angular",
+    "angular-counter",
+    "angular2",
+    "angular2+",
+    "angular-circle-counter"
   ],
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Piotr Suchanek <hunterdaver@gmail.com> (http://daver.net.pl/)",
   "license": "MIT",
   "repository": {
@@ -28,24 +32,36 @@
     "@angular/core": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@angular/cli": "~1.7.3",
-    "@angular/compiler-cli": "^5.2.0",
-    "@angular/language-service": "^5.2.0",
-    "@types/jasmine": "~2.8.3",
+    "@angular/animations": "^5.2.0",
+    "@angular/cli": "^1.7.4",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^5.2.11",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/language-service": "^5.2.11",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "@types/jasmine": "^2.8.8",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
-    "codelyzer": "^4.0.1",
+    "@types/node": "^6.0.112",
+    "codelyzer": "^4.3.0",
+    "core-js": "^2.5.7",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~2.0.0",
+    "karma": "^2.0.2",
     "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
-    "karma-jasmine": "~1.1.0",
+    "karma-coverage-istanbul-reporter": "^1.4.3",
+    "karma-jasmine": "^1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^2.4.1",
+    "ng-packagr": "^2.4.5",
     "protractor": "~5.1.2",
+    "rxjs": "^5.5.11",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3"
+    "typescript": "~2.5.3",
+    "zone.js": "^0.8.19"
   }
 }
