@@ -17,6 +17,7 @@ export class CounterComponent implements OnInit {
     @Input() circleColor: string = '#307bbb';
     @Input() fontSize: number = 150;
     @Input() delay: number = 0;
+    @Input() finishedText: string = '';
     @Output() finished = new EventEmitter();
     private _hold: boolean = true;
     private _count: number;
@@ -25,7 +26,7 @@ export class CounterComponent implements OnInit {
     private _holdProgress: number = 0;
     private _nativeElement: HTMLElement;
     private _startTimeout;
-
+    private _finishedCounting: boolean = false;
     @HostListener('window:scroll', ['$event'])
     @HostListener('window:resize', ['$event'])
     onWindowChange($event) {
@@ -97,6 +98,14 @@ export class CounterComponent implements OnInit {
         this._hold = value;
     }
 
+    get finishedCounting(): boolean {
+        return this._finishedCounting;
+    }
+
+    set finishedCounting(value: boolean) {
+        this._finishedCounting = value;
+    }
+
     ngOnInit(): void {
         this.init();
     }
@@ -126,6 +135,7 @@ export class CounterComponent implements OnInit {
         this.holdProgress = 0;
         this.startTime = undefined;
         this.percentDone = 0;
+        this.finishedCounting = false;
         window.clearTimeout(this.startTimeout);
         if (typeof this.of === 'undefined') {
             this.of = this.to;
@@ -133,6 +143,29 @@ export class CounterComponent implements OnInit {
         if (this.mode === 'onInit') {
             this.start();
         }
+    }
+
+    getCircleStyle(): any {
+        return {
+            'clip': this.percentDone >= 0.5 ? 'rect(auto, auto, auto, auto)' : 'rect(0em, 1em, 1em, 0.5em)'
+        };
+    }
+
+    getBarStyle(): any {
+        const rotateDeg = 360 * this.percentDone;
+        return {
+            'transform': `rotate(${rotateDeg}deg)`,
+            'border-color': this.circleColor
+        };
+    }
+
+    getFillStyle(): any {
+        const rotateDeg = this.percentDone > 0.5 ? 180 : 0;
+        return {
+            'display': this.percentDone <= 0.5 ? 'none' : 'block',
+            'transform': `rotate(${rotateDeg}deg)`,
+            'border-color': this.circleColor
+        };
     }
 
     private startAction(): void {
@@ -163,6 +196,7 @@ export class CounterComponent implements OnInit {
             return;
         }
         // Finished
+        this.finishedCounting = true;
         this.finished.emit();
     }
 
@@ -176,28 +210,5 @@ export class CounterComponent implements OnInit {
             rect.top >= 0 &&
             rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
         );
-    }
-
-    private getCircleStyle(): any {
-        return {
-            'clip': this.percentDone >= 0.5 ? 'rect(auto, auto, auto, auto)' : 'rect(0em, 1em, 1em, 0.5em)'
-        };
-    }
-
-    private getBarStyle(): any {
-        const rotateDeg = 360 * this.percentDone;
-        return {
-            'transform': `rotate(${rotateDeg}deg)`,
-            'border-color': this.circleColor
-        };
-    }
-
-    private getFillStyle(): any {
-        const rotateDeg = this.percentDone > 0.5 ? 180 : 0;
-        return {
-            'display': this.percentDone <= 0.5 ? 'none' : 'block',
-            'transform': `rotate(${rotateDeg}deg)`,
-            'border-color': this.circleColor
-        };
     }
 }

@@ -20,7 +20,7 @@
     display: flex;
 }
 
-.ng-counter__number, .ng-counter__prefix, .ng-counter__suffix {
+.ng-counter__number, .ng-counter__prefix, .ng-counter__suffix, .ng-counter__finish_text {
     font-size: 0.3em;
 }
 

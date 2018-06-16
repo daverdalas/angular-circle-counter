@@ -1,12 +1,17 @@
 <div class="ng-counter" [style.font-size]="fontSize + 'px'" [ngClass]="{'ng-counter--with-circle' : showCircle}">
     <div class="ng-counter__text">
-    <span class="ng-counter__prefix">
-        <ng-content select="ng-counter-prefix"></ng-content>
-    </span>
-        <span class="ng-counter__number">{{count}}</span>
-        <span class="ng-counter__suffix">
-        <ng-content select="ng-counter-suffix"></ng-content>
-    </span>
+        <ng-template [ngIf]="!finishedCounting || !finishedText.length">
+            <span class="ng-counter__prefix">
+                <ng-content select="ng-counter-prefix"></ng-content>
+            </span>
+            <span class="ng-counter__number">{{count}}</span>
+            <span class="ng-counter__suffix">
+                <ng-content select="ng-counter-suffix"></ng-content>
+            </span>
+        </ng-template>
+        <ng-template [ngIf]="finishedCounting && finishedText.length">
+            <span class="ng-counter__finish_text">{{finishedText}}</span>
+        </ng-template>
     </div>
     <div class="ng-counter__circle" *ngIf="showCircle" [ngStyle]="getCircleStyle()">
         <div class="ng-counter__circle__bar" [ngStyle]="getBarStyle()"></div>

@@ -8,7 +8,7 @@
     "angular2+",
     "angular-circle-counter"
   ],
-  "version": "1.0.6",
+  "version": "1.1.0",
   "author": "Piotr Suchanek <hunterdaver@gmail.com> (http://daver.net.pl/)",
   "license": "MIT",
   "repository": {
@@ -29,7 +29,7 @@
     "ease-component": "^1.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0"
+    "@angular/core": "^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0"
   },
   "devDependencies": {
     "@angular/animations": "^5.2.0",

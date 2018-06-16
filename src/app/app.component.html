@@ -149,6 +149,15 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA],
                             <td>-</td>
                             <td>Add html code before or after counter number</td>
                         </tr>
+                        <tr>
+                            <th scope="row">
+                                finishedText
+                            </th>
+                            <td><code>string</code></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>Add text to display after the counting is finished</td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -239,6 +248,10 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA],
                     </div>
                     <div class="row mt-3 mb-3">
                         <div class="col">
+                            <label>finishedText</label>
+                            <input type="text" name="finishedText" [(ngModel)]="finishedText" class="form-control">
+                        </div>
+                        <div class="col">
                             <label>&lt;ng-counter-suffix&gt;</label>
                             <input type="text" name="suffix" [(ngModel)]="suffix" class="form-control">
                         </div>
@@ -263,7 +276,7 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA],
                                  [circleColor]=circleColor
                                  [fontSize]=fontSize
                                  [delay]=delay
-
+                                 [finishedText]=finishedText
                     >
                         <ng-counter-suffix [innerHtml]="suffix"></ng-counter-suffix>
                         <ng-counter-prefix [innerHtml]="prefix"></ng-counter-prefix>

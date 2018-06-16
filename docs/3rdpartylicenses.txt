@@ -1,6 +1,6 @@
-core-js@2.5.3
+core-js@2.5.7
 MIT
-Copyright (c) 2014-2017 Denis Pushkarev
+Copyright (c) 2014-2018 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +20,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-zone.js@0.8.20
+zone.js@0.8.26
 MIT
 The MIT License
 
-Copyright (c) 2016 Google, Inc.
+Copyright (c) 2016-2018 Google, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -114,7 +114,7 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-@angular/core@5.2.9
+@angular/core@5.2.11
 MIT
 MIT
 
@@ -122,18 +122,18 @@ ease-component@1.0.0
 MIT
 MIT
 
-@angular/platform-browser@5.2.9
+@angular/platform-browser@5.2.11
 MIT
 MIT
 
-@angular/forms@5.2.9
+@angular/forms@5.2.11
 MIT
 MIT
 
-@angular/common@5.2.9
+@angular/common@5.2.11
 MIT
 MIT
 
-@angular/platform-browser-dynamic@5.2.9
+@angular/platform-browser-dynamic@5.2.11
 MIT
 MIT

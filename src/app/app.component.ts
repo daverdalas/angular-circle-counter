@@ -19,6 +19,7 @@ export class AppComponent implements AfterViewInit, OnInit {
     public delay: number = 0;
     public suffix: any = '%';
     public prefix: any = '';
+    public finishedText: string = '';
     @ViewChild('manual') counterComponent: CounterComponent;
 
     ngAfterViewInit(): void {
